@@ -23,8 +23,7 @@ pipeline {
              steps{  
                   script {
                withCredentials([[$class: 'AmazonWebServicesCredentialsBinding', credentialsId: 'awscreds']]) {
-              sh 'aws --version'
-    sh 'aws ecr get-login-password --region us-east-1 | docker login --username AWS --password-stdin 427336109184.dkr.ecr.us-east-1.amazonaws.com'
+    sh 'docker login --username AWS --password-stdin 427336109184.dkr.ecr.us-east-1.amazonaws.com'
      sh 'docker push 427336109184.dkr.ecr.us-east-1.amazonaws.com/dev-ecr:latest'
 }
 
