@@ -1,13 +1,14 @@
 pipeline {
     agent any
      environment {
-        registry = "<Account_ID>.dkr.ecr.us-east-1.amazonaws.com/<REPO_NAME>"
+        registry = "427336109184.dkr.ecr.us-east-1.amazonaws.com/dev-ecr"
+        region = "us-east-1"
     }
    
     stages {
           stage('Checkout') {
             steps {
-                git branch: 'main', url: 'https://github.com/Meenakshi0812/jenkins-ECR.git'
+                git branch: 'main', url: 'https://github.com/billyleunghk/pub_jenkins_ecr.git'
             }
         }
            stage('Building image') {
