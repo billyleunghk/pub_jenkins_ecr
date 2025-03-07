@@ -1,0 +1,14 @@
+{
+    "configurations": [
+        {
+            "type": "java",
+            "name": "Spring Boot-HwApplication<spring-boot-docker>",
+            "request": "launch",
+            "cwd": "${workspaceFolder}",
+            "mainClass": "com.beginsecure.hw.HwApplication",
+            "projectName": "spring-boot-docker",
+            "args": "",
+            "envFile": "${workspaceFolder}/.env"
+        }
+    ]
+}

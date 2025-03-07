@@ -1,0 +1,4 @@
+-------------------------------------------------------------------------------
+Test set: com.beginsecure.hw.HwApplicationTests
+-------------------------------------------------------------------------------
+Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 2.552 s -- in com.beginsecure.hw.HwApplicationTests
