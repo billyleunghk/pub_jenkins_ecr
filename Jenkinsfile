@@ -24,7 +24,7 @@ pipeline {
                   script {
                withCredentials([[$class: 'AmazonWebServicesCredentialsBinding', credentialsId: 'aws_cred', accessKeyVariable: 'AWS_ACCESS_KEY_ID', secretKeyVariable: 'AWS_SECRET_ACCESS_KEY']]) {
     sh 'aws ecr get-login-password --region us-east-1 | docker login --username AWS --password-stdin 427336109184.dkr.ecr.us-east-1.amazonaws.com'
-     sh 'docker push 427336109184.dkr.ecr.us-east-1.amazonaws.com/dev-ecr'
+     sh 'docker push 427336109184.dkr.ecr.us-east-1.amazonaws.com/dev-ecr:latest'
 }
 
 }
@@ -39,7 +39,7 @@ pipeline {
             stage('Docker Run') {
               steps{
                    script {
-                    sh 'docker run -d -p 8096:5000 --rm --name mypythonContainer <Account_ID>.dkr.ecr.us-east-1.amazonaws.com/<REPO_NAME>:latest'     
+                    sh 'docker run -d -p 8096:5000 --rm --name mypythonContainer 427336109184.dkr.ecr.us-east-1.amazonaws.com/dev-ecr:latest'     
                   }
               }
         }
